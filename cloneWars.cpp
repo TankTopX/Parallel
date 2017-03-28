@@ -123,15 +123,8 @@ int Rank(int valToFind, int size, int* Array)
 
 void pmerge(int* A, int* B, int* C, int size, int my_rank, int p)
 {
-	int* local_A = new int [16];
-	int* local_B = new int [16];
-	int* win_A = new int [16];
-	int* win_B = new int [16];
+	//Local Arrays
 	
-	clear(local_A, 16);
-	clear(local_B, 16);
-	clear(win_A, 16);
-	clear(win_B, 16);
 
 	for(int i = my_rank; i < 7; i+=p)
 	{
@@ -151,12 +144,7 @@ void pmerge(int* A, int* B, int* C, int size, int my_rank, int p)
 	 int* win_C = new int [size];
 	 clear(win_C, size);
 
-	 win_A[14] = 0;
-	 win_A[14 + 1] = (size/2);
-	 win_B[14] = 0;
-	 win_B[14 + 1] = (size/2);
-	 sort(win_A, win_A+2);
-	 sort(win_B, win_B+2);
+	 //Rank Arrays
 
 	 for( int i = my_rank; i < 14+1; i+=p)
 	 {
